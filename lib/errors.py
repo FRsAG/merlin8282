@@ -1,0 +1,2 @@
+class PythonVersionError(Exception):
+    pass

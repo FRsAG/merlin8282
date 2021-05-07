@@ -1,18 +1,23 @@
 #!/usr/bin/env python3
 
-import sys
+from lib.checks import Checker
+from lib.logger import Logger
+from lib.system_functions import System
 
 
-class PythonVersionError(Exception):
-    pass
+# Initialize Checker
+checker = Checker()
+# Check python version
+checker.check_python_version()
+
+# Initialize Logger
+logger = Logger()
+
+# Initialize System Functions
+system = System()
 
 
-if sys.version_info < (3, 6):
-    raise PythonVersionError("Python >= 3.6 required.")
-
-MESSAGE = "AZY TA SOEUR ELLE CROIT QU'UNE ERREUR 808 C'EST 2 ERREURS 404 !"
-
-
+# Start the bot
 if __name__ == "__main__":
-    print(f"{MESSAGE}")
-    sys.exit(42)
+    logger.log()
+    system.quit()
